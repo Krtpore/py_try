@@ -1,13 +1,14 @@
 import openpyxl
-wb = openpyxl.load_workbook('sample_data.xlsx', data_only=True)       #входной файл
-wb.create_sheet("svd")          #во входном файле создается сводный лист за месяц
+wb = openpyxl.load_workbook('sample_data.xlsx', data_only=True)
+#во входном файле создается сводный лист за месяц
+wb.create_sheet("svd")
 sheetoutput = wb["svd"]
 lineoutput = 2
 table_starts_from_x = 1
 table_starts_from_y = 1
 table_ends_on_x = 1
 table_ends_on_y = 1
-blck_cntr = 0           #отсекатель двойного попадания слова "блок"
+blck_cntr = 0   #отсекатель двойного попадания слова "блок"
 for sheetcntr in range(1, 32):
     sheetread = wb[str(sheetcntr)]
     print(sheetread)
